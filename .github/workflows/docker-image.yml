@@ -2,7 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
 
 jobs:
   build:
@@ -16,7 +17,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        run: |
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
       - name: Build the Docker image
         run: docker build -t umerali5745/cicd_pipeline:latest .
