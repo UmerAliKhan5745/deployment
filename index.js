@@ -5,7 +5,7 @@ const port = 3000;
 app.get("/", (req, res) => {
   res.json({
     status: 200,
-    message: "Hello0 World!",
+    message: "Hello World!",
   });
 });
 
