@@ -5,7 +5,7 @@ const port = 8080;
 app.get("/", (req, res) => {
   res.json({
     status: 200,
-    message: "hooo gya ",
+    message: "hooo gya ?",
   });
 });
 
